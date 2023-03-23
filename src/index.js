@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const port = 3000
 const app = require('./app');
 //mongoose.connect('mongodb://localhost/testaroo', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
-mongoose.connect('mongodb://localhost:27017/testaroo', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }).then(() => {
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }).then(() => {
     console.log("Database Connected Succesfully");
 }).catch(err => {
     console.log(err.message);
